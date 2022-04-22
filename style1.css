@@ -1,0 +1,138 @@
+/*전체 선택자*/
+*{
+    margin: 0;
+}   
+
+ul li{
+    float: left;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+header,.contents,footer{
+    width: 960px;/*가로길이*/ margin: 0 auto;/*중앙정렬*/
+}
+
+header{
+    background-color: lightblue;/*뒷배경*/
+    position: relative;
+    height: 150px;
+}
+
+
+
+
+/*폰트*/
+#hearder_title > h1{
+    font-family: 'Ms Madi', cursive;
+}
+/*위치*/
+#header_gnb{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#header_gnb>ul>li{float: left;}
+#header_gnb>ul>li>a{ /*a태그에는float태그를못줌*/
+    border: 1px solid black;
+    padding: 2px 10px;
+    border-right: none;
+}
+#header_gnb>ul>li>a:hover{
+    background-color: black;
+    color: white;
+}
+#header_gnb>ul>li:first-child>a{/*첫번째목록*/
+    border-radius: 10px 0 0 10px;/*표둥글게 시계방향*/
+}
+#header_gnb>ul>li:last-child>a{/*마지막목록*/
+    border-right: 1px solid black;
+    border-radius: 0 10px 10px 0;/*표둥글게*/
+}
+
+
+#header_inb{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+#header_inb>ul>li{
+    border: 1px solid black;
+    float: left;
+    padding: 2px 10px;
+    border-right: none;
+}
+#header_inb>ul>li:first-child{
+    border-radius: 10px 0 0 10px;
+}
+#header_inb>ul>li:last-child{
+    border-right: 1px solid black;
+    border-radius: 0 10px 10px 0;
+}
+
+.contents{
+    overflow: hidden;/*내용이들어가도록*/
+    background-color: lightyellow;
+}
+
+.contents>section{
+    width: 760px;
+    text-align: left;
+    float: left;
+    background-color: lightcyan;
+}
+
+.contents>aside{
+    width: 200px;
+    float: right;
+    background-color: lightgoldenrodyellow;
+}
+
+.contents article{
+    border: 1px solid black;
+    padding: 20px;
+    margin-bottom: 20px; /*공간부여*/
+}
+
+/*사이드 탭 영역*/
+input{
+    display: none; /*체크표시없어지게*/
+}
+input ~ div{
+    display: none;
+}
+input:nth-of-type(1):checked ~ div:nth-of-type(1){display: block;} /*HTML5누르면내용뜨게*/
+input:nth-of-type(2):checked ~ div:nth-of-type(2){display: block;} /*CSS누르면내용뜨게*/
+
+section>label{
+    display: block; /*공간태그로만들고보여주는거*/ float: left;
+    width: 100px; height: 30px;
+    text-align: center; /*글자정렬*/
+    line-height: 30px; /*한줄의글자만높이똑같이주면중간정렬*/
+    box-sizing: border-box; /*박스안에보더값을주려면*/
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+}
+
+input:nth-of-type(1):checked ~ section>label:nth-of-type(1){
+    background-color: white;
+    color: black;
+}
+input:nth-of-type(2):checked ~ section>label:nth-of-type(2){
+    background-color: white;
+    color: black;
+}
+
+/*footer 영역*/
+footer{
+    background-color: lightskyblue;
+    margin: 0 auto;
+}
